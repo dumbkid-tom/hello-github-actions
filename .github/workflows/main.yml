@@ -25,7 +25,7 @@ jobs:
       - name: Create a file
         run: |
           echo "This is the content of the new file" > new-file.txt
-          git config --global user.email "action@github.com"
+          git config --global user.email "dumbkid-tom@users.noreply.github.com"
           git config --global user.name "Github Action"
           git add new-file.txt
           git commit -m "Created new file"
