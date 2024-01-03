@@ -1,11 +1,28 @@
-name: A workflow for my Hello World file
-on: push
+# name: A workflow for my Hello World file
+# on: push
+# jobs:
+#   build:
+#     name: Hello world action
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v1
+#       - uses: ./action-a
+#         with:
+#           MY_NAME: "Mona"
+
+name: Daily Poll Runner
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Run every hour
+
 jobs:
-  build:
-    name: Hello world action
+  create-file:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: ./action-a
-        with:
-          MY_NAME: "Mona"
+      - name: Create a file
+        run: |
+          echo "This is the content of the new file" > new-file.txt
+          git add new-file.txt
+          git commit -m "Created new file"
+          git push
