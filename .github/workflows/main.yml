@@ -14,7 +14,7 @@ name: Daily Poll Runner
 
 on:
   schedule:
-    - cron: '42 * * * *'  # Run every hour
+    - cron: '45 * * * *'  # Run every hour
 
 jobs:
   create-file:
