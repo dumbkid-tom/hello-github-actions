@@ -29,4 +29,4 @@ jobs:
           git config --global user.name "Github Action"
           git add new-file.txt
           git commit -m "Created new file"
-          git push
+          git push origin HEAD:main
