@@ -20,6 +20,7 @@ jobs:
   create-file:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - name: Create a file
         run: |
           echo "This is the content of the new file" > new-file.txt
